@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #17181f;
+    color: #ffffff;
 }
 
 :root {
@@ -10,6 +12,8 @@
     --vh-tec: 160px;
     --wd-arrow : 60px;
     --margin-item: 40px;
+    --p-small: 14px;
+    --semi-bold: 500;
   }
 h1{
     margin: 40px 0;
@@ -74,6 +78,7 @@ h1{
 }
 
 .current-tecnologia {
+    margin-left: 40px;
     opacity: 1;
     transform: scale(1.05);
 }
@@ -83,11 +88,54 @@ h1{
 }
 
 .item .tecnologia-image{
+    margin-left: 50px;
     width: 100%;
     height: var(--vh-tec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .item .tecnologia-image img{
-    height: inherit;
+    width: auto;
+    max-width: 120px;
+    height: 80px;
+}
+
+
+
+.show{
+    display: flex;
+    flex-direction: column;
+    transition: all .8s ease;
+}
+
+#show-item{
+    width: 100px;
+    margin-top: -120px;
+    position: absolute;
+    display:none;
+    padding: 5px;
+    background-color: #0f0f0f;
+    color: var(--color-white);
+    font-size: var(--p-small);
+    font-weight: var(--semi-bold);
+    z-index: 99;
+}
+
+#show-item::before,
+#show-item::after{
+    content: '';
+    position: absolute;
+    right: 45%;
+    bottom: -6px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #0f0f0f;
+    
+}
+  
+.current-tecnologia #show-item{
+    display:block;
 }
 
